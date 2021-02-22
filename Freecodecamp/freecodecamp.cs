@@ -1,31 +1,4 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-
-//namespace Freecodecamp
-//{
-//    class Codecamp
-//    {
-//        static void Main(string[] args)
-//        {
-
-//            Console.WriteLine("Enter color");
-//            string color=Console.ReadLine();
-//            Console.WriteLine("Enter noun");
-//            string noun = Console.ReadLine();
-//            Console.WriteLine("Enter celebrity name");
-//            string celeb = Console.ReadLine();
-//            Console.WriteLine("Roses are "+color);
-//            Console.WriteLine(noun+" are blue");
-//            Console.WriteLine("i love "+celeb);
-//            Console.ReadLine();
-//        }
-//    }
-//}
-
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +11,7 @@ namespace Freecodecamp
     {
         static void Main(string[] args)
         {
+            //Madlib();
             // Array();
             //SayHi();
             //PassPara("Saroj Shrestha",24);
@@ -54,11 +28,31 @@ namespace Freecodecamp
             Console.Write("Enter third number:");
             num3 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(GetMaxx(num1,num2,num3));*/
-            
-            
+
+            /* Console.Write("Enter day number:");
+             int x = Convert.ToInt32(Console.ReadLine());
+             Console.WriteLine("Today is: "+GetDay(x));*/  //This is switch  example
+
+            // While_Loop();
+            //Mul2();
+            Guess();
+           
             Console.ReadLine();
             }
 
+        static void Madlib()
+        {
+            Console.WriteLine("Enter color");
+            string color = Console.ReadLine();
+            Console.WriteLine("Enter noun");
+            string noun = Console.ReadLine();
+            Console.WriteLine("Enter celebrity name");
+            string celeb = Console.ReadLine();
+            Console.WriteLine("Roses are " + color);
+            Console.WriteLine(noun + " are blue");
+            Console.WriteLine("i love " + celeb);
+            Console.ReadLine();
+        }
         static void Array()
         {
             string[] friends = new string[5];
@@ -130,7 +124,7 @@ namespace Freecodecamp
             {
                 Maxx = num1;
             }
-            else if (num2 > =num1 && num2 >= num3)
+            else if (num2 >= num1 && num2 >= num3)
             {
                 Maxx = num2;
             }
@@ -143,6 +137,99 @@ namespace Freecodecamp
             return Maxx;
         }
 
+        static string GetDay(int num)
+        {
+            string Dayname;
 
+            switch(num)
+            {
+                case 0:
+                    Dayname = "Sunday";
+                    break;
+                case 1:
+                    Dayname = "Monday";
+                    break;
+                case 2:
+                    Dayname = "Tuesday";
+                    break;
+                case 3:
+                    Dayname = "Wednesday";
+                    break;
+                default:
+
+                    Dayname="Invalid number";
+                    break;
+            }
+                
+            return Dayname;
+        }
+        static void While_Loop()
+        {
+            int index = 1;
+            while(index<=5)
+            {
+                Console.WriteLine(index);
+                index++;
+            }
+            
+
+            /*do
+            {
+                Console.WriteLine(index);
+                index++;
+            } while (index <= 5); */
+
+
+        }
+
+        static void Mul2()
+        {
+            int index = 2;
+            while(index <= 20)
+            {
+
+                if (index % 2 == 0)
+                {
+                    Console.WriteLine(index);
+                }
+                index++;
+
+            } 
+        }
+
+        static void Guess()
+        {
+            Console.WriteLine("Hint: Its an animal");
+            string secret = "cat";
+            string guess="";
+            int guesscount = 0;
+            int guesslimit = 5;
+            bool outofguesses = false;
+            while(guess !=secret && outofguesses==false)  //!outofguesses and outofguesses=false is same
+            {
+                if (guesscount < guesslimit)
+                {
+                    Console.Write("Enter your guess:");
+                    guess = Console.ReadLine();
+                    guesscount++;
+                }
+                else
+                {
+                    outofguesses = true;
+                }
+            }
+            if (!outofguesses)
+            {
+                Console.WriteLine("Congratulations! You guessed correctly.");
+             }
+            else
+            {
+                Console.WriteLine("Sorry! You lost the game.");
+            }
+            Console.ReadLine();
+        }
+
+
+        
     }
 }
