@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="book.cs" />
+    <Compile Include="BookConstr.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="freecodecamp.cs" />
+    <Compile Include="Movie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rent.cs" />
